@@ -90,8 +90,8 @@ fi
       b=${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}
       c=${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}
       d=${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}
-     
-      echo $network:$a:$b:$c:$d >> ip.list #Для /64 сети требуется 4 блока:a, b, c, d #Если сеть /48, то 5 блоков, то есть + e блок через двоеточие
+      e=${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}${array[$RANDOM%16]}
+      echo $network:$a:$b:$c:$d:$e >> ip.list #Для /64 сети требуется 4 блока:a, b, c, d #Если сеть /48, то 5 блоков, то есть + e блок через двоеточие
   }
 
   #echo "$MAXCOUNT случайных IPv6:"
