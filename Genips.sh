@@ -78,7 +78,11 @@
       #echo "ifconfig eth0 inet6 add $i/64"
       ifconfig eth0 inet6 add $i/48 # Если сеть 64 то $i/64 если 48 то $i/48
   done
-
+ifconfig sit0 up
+ifconfig sit0 inet6 tunnel ::216.66.84.46
+ifconfig sit1 up
+ifconfig sit1 inet6 add 2001:470:1f14:c7::2/64
+route -A inet6 add ::/0 dev sit1
 
   echo ====================================
   echo      Generate 3proxy.cfg
